@@ -19,9 +19,7 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# .env supplies optional local overrides. .env.local holds the Neon URL.
 load_dotenv(BASE_DIR / ".env")
-load_dotenv(BASE_DIR / ".env.local", override=False)
 
 
 # Quick-start development settings - unsuitable for production
@@ -83,7 +81,7 @@ WSGI_APPLICATION = 'futebol.wsgi.application'
 
 if not os.environ.get("DATABASE_URL"):
     raise RuntimeError(
-        "DATABASE_URL is not set. Add it to .env.local or .env."
+        "DATABASE_URL is not set. Add it to .env."
     )
 
 DATABASES = {
